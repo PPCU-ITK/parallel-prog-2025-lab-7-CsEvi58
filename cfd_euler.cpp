@@ -227,7 +227,7 @@ int main(){
         }
 
         // Copy updated values back
-        #pragma omp target teams distribute parallel for
+        #pragma omp target teams distribute parallel for collapse(2)
         for (int i = 1; i <= Nx; i++){
             for (int j = 1; j <= Ny; j++){
                 rho[i*(Ny+2)+j] = rho_new[i*(Ny+2)+j];
